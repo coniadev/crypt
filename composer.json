@@ -1,6 +1,6 @@
 {
     "name": "conia/crypt",
-    "description": "Encryption and decryption of strings",
+    "description": "Encrypts and decrypts strings",
     "type": "library",
     "license": "MIT",
     "minimum-stability": "dev",

@@ -1,7 +1,7 @@
 Conia Crypt
 ===========
 
-Encryption and decryption of strings with builtin PHP functions.
+Encrypts and decrypts strings with builtin PHP functions.
 
 ## License
 
