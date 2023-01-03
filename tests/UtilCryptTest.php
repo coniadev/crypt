@@ -5,19 +5,22 @@ declare(strict_types=1);
 use Conia\Crypt\Crypt;
 
 test('Encryption and decryption', function () {
-    expect(Crypt::decrypt(
-        Crypt::encrypt('Symbolic', 'secret-key'),
-        'secret-key'
-    ))->toBe('Symbolic');
+    $encrypted = Crypt::encrypt('Symbolic', 'secret-key');
+    $decrypted = Crypt::decrypt($encrypted, 'secret-key');
+
+    expect($encrypted)->not->toBe('Symbolic');
+    expect($decrypted)->not->toBe($encrypted);
+    expect($decrypted)->toBe('Symbolic');
 });
 
 
 test('Encryption and decryption with alternate algo', function () {
-    expect(Crypt::decrypt(
-        Crypt::encrypt('Symbolic', 'secret-key', 'aes-256-cbc'),
-        'secret-key',
-        'aes-256-cbc'
-    ))->toBe('Symbolic');
+    $encrypted = Crypt::encrypt('Symbolic', 'secret-key', 'aes-256-cbc');
+    $decrypted = Crypt::decrypt($encrypted, 'secret-key', 'aes-256-cbc');
+
+    expect($encrypted)->not->toBe('Symbolic');
+    expect($decrypted)->not->toBe($encrypted);
+    expect($decrypted)->toBe('Symbolic');
 });
 
 
