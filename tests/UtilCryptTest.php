@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 use Conia\Crypt\Crypt;
 
-
 test('Encryption and decryption', function () {
     expect(Crypt::decrypt(
         Crypt::encrypt('Symbolic', 'secret-key'),
