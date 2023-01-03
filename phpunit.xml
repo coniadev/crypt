@@ -4,17 +4,13 @@
          bootstrap="tests/Setup/bootstrap.php"
          colors="true">
     <testsuites>
-        <testsuite name="Chuck Test Suite">
+        <testsuite name="Conia Crypt Test Suite">
             <directory suffix="Test.php">tests</directory>
         </testsuite>
     </testsuites>
     <filter>
         <whitelist processUncoveredFilesFromWhitelist="true">
             <directory suffix=".php">src</directory>
-            <exclude>
-                <file>src/Server/Server.php</file>
-                <file>src/Server/CliRouter.php</file>
-            </exclude>
         </whitelist>
     </filter>
     <coverage processUncoveredFiles="true" pathCoverage="true">
